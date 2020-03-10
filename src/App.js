@@ -1,19 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import creedBanner from './creed-thoughts.gif';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={creedBanner} id="creed-banner" alt="www.creedthoughts.gov.www/creedthoughts." />
-        <h2 id="under-construction">
-        ⚠️ Under Construction ⚠️
-        </h2>
-      </header>
-    </div>
-  );
+//Components
+import UnderConstruction from './Components/UnderConstruction';
+import RandomThought from './Components/RandomThought';
+
+class App extends Component  {
+  render () {
+    return (
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route exact path='/' component={UnderConstruction} />
+            <Route exact path='/thought' component={RandomThought} />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;

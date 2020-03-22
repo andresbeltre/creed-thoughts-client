@@ -9,7 +9,7 @@ class UnderConstruction extends Component {
 				<div className="row">
 					<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" style={{textAlign: "center"}}>
 						<img src={creedBanner} id="creed-banner" alt="www.creedthoughts.gov.www/creedthoughts." />
-						<h2 id="under-construction">⚠️ Under Construction ⚠️</h2>
+						<h2 id="under-construction"><span role="img" aria-labelledby="warning">⚠️</span> Under Construction <span role="img" aria-labelledby="warning">⚠️</span></h2>
 					</div>
 				</div>
 			</div>

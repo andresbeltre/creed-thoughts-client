@@ -12,7 +12,7 @@ import UnderConstruction from './UnderConstruction';
 
 class App extends Component  {
   async componentDidMount() {
-    //await this.props.fetchThought();
+    await this.props.fetchThought();
   }
 
   render () {

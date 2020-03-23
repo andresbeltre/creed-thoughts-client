@@ -1,14 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class RandomThought extends Component {
-  render() {
-    let fetchedThought = this.props.thought.thought
-    console.log(fetchedThought) 
+  componentDidMount() {
+    //let fetchedThought = this.props.thought.thought;
+    // let thoughtObj;
+    // if (fetchedThought) {
+    //   console.log("test");
+    //   thoughtObj = JSON.parse(fetchedThought);
+    //   console.log(thoughtObj);
+    // }
+    // console.log(thoughtObj);
+    //console.log(fetchedThought);
+    // console.log(thoughtObj);
+    // console.log(JSON.stringify(thoughtObj));
+  }
 
-    for(var x in fetchedThought){
-      console.log(x)
+  render() {
+    let fetchedThought;
+    if (this.props.thought.thought !== undefined) {
+      fetchedThought = this.props.thought.thought;
+      console.log(fetchedThought);
+      let thoughtObj = JSON.parse(fetchedThought);
+      console.log(thoughtObj);
     }
+
     return (
       <div className="container">
         <div className="row">
@@ -17,7 +33,7 @@ class RandomThought extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

@@ -13,8 +13,7 @@ import UnderConstruction from "./UnderConstruction";
 class App extends Component {
   async componentDidMount() {
     try {
-      const test = await this.props.fetchThought();
-      console.log("in app.ja", test);
+      const thought = await this.props.fetchThought();
     } catch (error) {
       return { success: false, error: error.message };
     }
@@ -40,8 +39,9 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log("state", state.thoughtReducer.thought.thought);
   return {
-    thought: state.thought
+    thought: state.thoughtReducer.thought
   };
 };
 

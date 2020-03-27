@@ -1,10 +1,22 @@
 import { FETCH_THOUGHT } from "../actions/types";
 
-export default function(state = {}, action) {
+let initialState = {
+  thought: {
+    url:"",
+    content: "",
+    date:{
+      time:"",
+      date: ""
+    }
+  },
+  loading: true
+}
+
+export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_THOUGHT:
       return {
-        thought: action.payload,
+        thought: action.payload.thought,
         loading: false
       };
     default:

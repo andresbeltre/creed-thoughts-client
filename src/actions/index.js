@@ -7,6 +7,7 @@ export const fetchThought = () => async dispatch => {
     const res = await axios.get(
       "https://us-central1-creed-thoughts-e5d5d.cloudfunctions.net/api/thoughts/random"
     );
+    
     dispatch({ type: FETCH_THOUGHT, payload: res.data });
   } catch (error) {
     return { success: false, error: error.message };

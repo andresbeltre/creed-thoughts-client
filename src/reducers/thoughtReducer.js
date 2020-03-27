@@ -1,11 +1,11 @@
-import { FETCH_THOUGHT } from "../actions/types";
+import { FETCH_THOUGHT } from "../actions/types"
 
 let initialState = {
   thought: {
-    url:"",
+    url: "",
     content: "",
-    date:{
-      time:"",
+    date: {
+      time: "",
       date: ""
     }
   },
@@ -16,10 +16,10 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_THOUGHT:
       return {
-        thought: action.payload.thought,
+        thought: action.payload,
         loading: false
-      };
+      }
     default:
-      return state;
+      return state
   }
 }

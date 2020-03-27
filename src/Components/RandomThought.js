@@ -1,17 +1,16 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchThought } from "../actions";
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import { fetchThought } from "../actions"
 
 class RandomThought extends Component {
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
-    let fetchedThought;
+    console.log("GET MOH MONEY", this.props)
+    let fetchedThought
     if (this.props.thought !== undefined) {
-      fetchedThought = this.props.thought;
-      console.log({fetchedThought});
+      fetchedThought = this.props.thought
+      console.log({ fetchedThought })
     }
 
     return (
@@ -23,15 +22,15 @@ class RandomThought extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = state => {
   console.log("give me this money bitch", state)
   return {
-    thought: state.thoughtReducer.thought
-  };
-};
+    thought: state.thought.thought
+  }
+}
 
-export default connect(mapStateToProps)(RandomThought);
+export default connect(mapStateToProps)(RandomThought)

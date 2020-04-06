@@ -1,24 +1,24 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { fetchThought } from "../actions"
 
 class RandomThought extends Component {
   componentDidMount() {}
 
   render() {
-    console.log("GET MOH MONEY", this.props)
     let fetchedThought
     if (this.props.thought !== undefined) {
       fetchedThought = this.props.thought
       console.log({ fetchedThought })
     }
 
+    let content = fetchedThought.content.split("\\n\\n").map((text, i) => i ? [<br/>,<br/>, text] : text);
+
     return (
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <p>Hello, World!</p>
-            <p>{fetchedThought.content}</p>
+            <div>{fetchedThought.date.date}</div>
+            <div>{content}</div>
           </div>
         </div>
       </div>
@@ -27,7 +27,6 @@ class RandomThought extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("give me this money bitch", state)
   return {
     thought: state.thought.thought
   }

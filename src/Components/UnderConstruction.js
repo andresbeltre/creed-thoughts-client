@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import creedBanner from './../creed-thoughts.gif';
+import creedBanner from './../assets/creed-thoughts.gif';
 import './../App.css';
 
 class UnderConstruction extends Component {
